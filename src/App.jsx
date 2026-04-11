@@ -272,11 +272,28 @@ function Marquee() {
 
 export default function App() {
   useReveal()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const navLinks = ['About', 'Skills', 'Projects', 'Experience', 'Contact']
+
+  const closeMenu = () => setMenuOpen(false)
 
   return (
     <>
       <div className="noise" />
       <Cursor />
+
+      {/* MOBILE MENU */}
+      <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
+        {navLinks.map(link => (
+          <a key={link} href={`#${link.toLowerCase()}`} onClick={closeMenu}>
+            {link}
+          </a>
+        ))}
+        <a href="mailto:rahirahman2001@gmail.com" onClick={closeMenu}
+          style={{ color: 'var(--accent)', fontSize: 'clamp(1.2rem, 5vw, 1.6rem)' }}>
+          Hire Me →
+        </a>
+      </div>
 
       {/* NAV */}
       <nav>
@@ -284,15 +301,24 @@ export default function App() {
           RR <span className="dot" />
         </a>
         <ul className="nav-links">
-          {['About', 'Skills', 'Projects', 'Experience', 'Contact'].map(link => (
+          {navLinks.map(link => (
             <li key={link}>
               <a href={`#${link.toLowerCase()}`}>{link}</a>
             </li>
           ))}
         </ul>
-        <a href="mailto:rahiqrahman2001@gmail.com" className="nav-cta">
-          Hire Me
-        </a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <a href="mailto:rahirahman2001@gmail.com" className="nav-cta">
+            Hire Me
+          </a>
+          <button
+            className={`nav-hamburger${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+          >
+            <span /><span /><span />
+          </button>
+        </div>
       </nav>
 
       {/* HERO */}
@@ -383,25 +409,25 @@ export default function App() {
               ))}
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', paddingTop: '60px' }}>
-            <div className="reveal" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '32px' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🎯</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, marginBottom: '8px', fontSize: '1rem' }}>Frontend Specialist</h3>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-2)', lineHeight: 1.7 }}>
+          <div className="about-info-cards">
+            <div className="info-card reveal">
+              <div className="info-card-icon">🎯</div>
+              <h3 className="info-card-title">Frontend Specialist</h3>
+              <p className="info-card-text">
                 Focused on creating responsive, accessible interfaces with React and modern CSS. I care deeply about performance and user experience.
               </p>
             </div>
-            <div className="reveal reveal-delay-2" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '32px' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🚀</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, marginBottom: '8px', fontSize: '1rem' }}>Full-Stack Capable</h3>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-2)', lineHeight: 1.7 }}>
+            <div className="info-card reveal reveal-delay-2">
+              <div className="info-card-icon">🚀</div>
+              <h3 className="info-card-title">Full-Stack Capable</h3>
+              <p className="info-card-text">
                 Comfortable across the stack — from Django REST APIs and MongoDB to Firebase integrations and Node.js backends.
               </p>
             </div>
-            <div className="reveal reveal-delay-3" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '32px' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🎨</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, marginBottom: '8px', fontSize: '1rem' }}>Design-Minded</h3>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-2)', lineHeight: 1.7 }}>
+            <div className="info-card reveal reveal-delay-3">
+              <div className="info-card-icon">🎨</div>
+              <h3 className="info-card-title">Design-Minded</h3>
+              <p className="info-card-text">
                 Proficient in Figma and Framer for UI/UX design, with an eye for typography, spacing, and visual hierarchy.
               </p>
             </div>
