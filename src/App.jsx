@@ -22,7 +22,7 @@ const skillCategories = [
   {
     icon: '🗄️',
     name: 'Databases',
-    tags: ['MongoDB', 'Firebase', 'SQL'],
+    tags: ['MongoDB', 'Firebase', 'SQL', 'PostgreSQL'],
   },
   {
     icon: '💻',
@@ -32,7 +32,7 @@ const skillCategories = [
   {
     icon: '🤖',
     name: 'AI & Dev Tools',
-    tags: ['GitHub Copilot', 'Claude AI', 'ChatGPT', 'Grok', 'WordPress'],
+    tags: ['GitHub Copilot', 'Claude AI', 'ChatGPT', 'Grok', 'Antigravity', 'Google Firebase'],
   },
 ]
 
@@ -40,32 +40,32 @@ const projects = [
   {
     title: 'IEEE NSU Student Branch Website',
     desc: 'Full-featured portal enabling dynamic management of emails, tasks, notifications, events, member records, achievements, budgeting, membership renewals, magazines, and blogs.',
-    tags: ['React', 'Django', 'PostgreSQL', 'Figma'],
+    tags: ['React', 'Django', 'PostgreSQL', 'Figma', 'Tailwind CSS'],
   },
   {
     title: 'SPAC 2024 Management System',
     desc: 'Event management platform handling registration, food distribution, goodies tracking, and security clearance via QR scanning with data tracking for attendance and financials.',
-    tags: ['React', 'Node.js', 'Firebase', 'QR Integration'],
+    tags: ['React', 'Django', 'Firebase', 'QR Integration'],
   },
   {
     title: 'SPAC 2025 Platform',
     desc: 'Extended SPAC 2024 with a modern promotional website, dedicated registration form, and advanced email filtering for phase-based participant communication.',
-    tags: ['React', 'Django', 'Email API', 'Tailwind'],
+    tags: ['React', 'Django', 'Email API', 'Tailwind CSS'],
   },
   {
     title: 'PowerExpress 2.0',
     desc: 'Event system with custom registration, integrated email communication, and QR-based verification for streamlined event operations.',
-    tags: ['React', 'Node.js', 'QR Code', 'MongoDB'],
+    tags: ['React', 'Django', 'QR Code', 'SQL'],
   },
   {
     title: 'STEP 25 Event System',
     desc: 'Built a complete event management system with a custom registration form, integrated email communication, and QR-based verification.',
-    tags: ['React', 'Firebase', 'Tailwind', 'Email'],
+    tags: ['React', 'SQL', 'Tailwind CSS', 'Email'],
   },
   {
     title: 'PEEIACON 2025 Website',
     desc: 'Managed and maintained the PEEIACON 2025 WordPress website, ensuring consistent design, content updates, and smooth UX throughout the event lifecycle.',
-    tags: ['WordPress', 'CSS', 'PHP', 'Event Management'],
+    tags: ['WordPress', 'CSS', 'PHP'],
   },
 ]
 
